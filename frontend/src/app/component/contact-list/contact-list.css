@@ -1,0 +1,82 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Левая панель с формой */
+.form-section {
+  flex: 1;
+  max-width: 400px;
+}
+
+/* Правая панель со списком */
+.list-section {
+  flex: 2;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 12px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+li:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+button {
+  background-color: #ff5252;
+  border: none;
+  color: white;
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #e04545;
+}
+
+div[ngIf] {
+  color: #666;
+  font-style: italic;
+}
+
+/* 📱 На мобильных — колонки превращаются в столбцы */
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .form-section,
+  .list-section {
+    max-width: 100%;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

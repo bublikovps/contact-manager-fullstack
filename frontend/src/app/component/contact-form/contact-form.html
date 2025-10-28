@@ -1,0 +1,7 @@
+<h3>Neuer Kontakt</h3>
+<form (ngSubmit)="save()">
+  <input [(ngModel)]="contact.name" placeholder="Name" name="name" required><br><br>
+  <input [(ngModel)]="contact.email" placeholder="E-Mail" name="email" type="email"><br><br>
+  <input [(ngModel)]="contact.phone" placeholder="Telefon" name="phone"><br><br>
+  <button type="submit">Speichern</button>
+</form>

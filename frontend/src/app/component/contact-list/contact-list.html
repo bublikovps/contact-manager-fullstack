@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="form-section">
+    <app-contact-form (contactAdded)="load()"></app-contact-form>
+  </div>
+
+  <div class="list-section">
+    <h2>Kontaktliste</h2>
+    <ul>
+      @for (c of contacts; track c.id) {
+        <li>
+          <strong>{{ c.name }}</strong> — {{ c.email }} ({{ c.phone }})
+          <button (click)="delete(c.id!)">Löschen</button>
+        </li>
+      }
+    </ul>
+
+    <div *ngIf="contacts.length === 0">Keine Kontakte gefunden.</div>
+  </div>
+</div>
